@@ -1,4 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
+import PropTypes from 'prop-types';
+
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
@@ -78,7 +80,7 @@ const CharList = (props)=> {
                 </li>
             )
         });
-        // А эта конструкция вынесена для центровки спиннера/ошибки
+        // эта конструкция вынесена для центровки спиннера/ошибки
         return (
             <ul className="char__grid">
                 {items}
@@ -111,5 +113,8 @@ const CharList = (props)=> {
         )
     }
 
+    CharList.propTypes = {
+      onCharSelected: PropTypes.func.isRequired
+  }
 
 export default CharList;

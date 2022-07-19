@@ -1,27 +1,22 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {SingleComicPage } from "../pages";
+import {Helmet} from "react-helmet";
 
 import ComicsList from "../comicsList/ComicsList";
 import AppBanner from "../appBanner/AppBanner";
 
 const ComicsPage = () => {
-  return(
-    
-      <>
-          <AppBanner/>
-          <Routes>
-          <Route>
-              <Route path=":id" element={<SingleComicPage/>}/>
-              <Route path="/" element={<ComicsList/>}/>
-          </Route>
-      </Routes>
-      </>
-
-    
-     
-
-
-  )
+    return (
+        <>
+          <Helmet>
+    <meta 
+    name="description"
+    content="Page with the list of our comics"
+    />
+    <title>Comics page</title>
+  </Helmet>
+            <AppBanner/>
+            <ComicsList/>
+        </>
+    )
 }
 
 export default ComicsPage;

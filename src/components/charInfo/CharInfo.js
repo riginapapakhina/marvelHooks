@@ -88,7 +88,7 @@ const View = ({char}) => {
                         if (i > 9) return;
                         return (
                             <li key={i} className="char__comics-item">
-                              <Link to={`/comics/${item.resourceURI.substring(43)}`}>
+                              <Link to={`/comics/${item.resourceURI.substring(43)}`}> 
                               {item.name}
 
                               </Link>
